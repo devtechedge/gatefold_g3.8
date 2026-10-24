@@ -7,7 +7,7 @@ issuance, and attendee check-in.
 
 ## Live Demo
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-gatefold.vercel.app-18181b?style=flat-square&logo=vercel&logoColor=white)](https://gatefold.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-gatefold-zeta.vercel.app-18181b?style=flat-square&logo=vercel&logoColor=white)](https://gatefold-zeta.vercel.app)
 
 ![CI](https://img.shields.io/github/actions/workflow/status/devtechedge/gatefold_g3.8/ci.yml?style=flat-square&logo=githubactions&logoColor=white&label=CI)
 
