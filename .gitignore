@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+*.tsbuildinfo
+
+# Runtime data (embedded PGlite database directory)
+.data/
+
+# AI tooling leftovers
+.aistudio/
+
+# Tests
+coverage/
+playwright-report/
+test-results/
+
+# Environment & secrets
+.env*
+!.env.example
+.vercel/
+
+# OS & editor noise
+.DS_Store
+Thumbs.db
+*.log
