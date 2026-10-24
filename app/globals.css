@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Class-based dark mode: the ThemeToggle adds .dark to <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --page: #faf8f5;
+  --card: #ffffff;
+  --card-2: #f5f3f0;
+  --ink: #1c1917;
+  --muted: #78716c;
+  --line: #e7e5e4;
+  --line-2: #d6d3d1;
+}
+
+.dark {
+  color-scheme: dark;
+  --page: #121110;
+  --card: #1c1a18;
+  --card-2: #242220;
+  --ink: #eae6e2;
+  --muted: #a39d96;
+  --line: #33302e;
+  --line-2: #45413d;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: background-color 0.2s ease;
+}
+
+body {
+  background-color: var(--page);
+  color: var(--ink);
+}
+
+/* Overlay scrollbars: hidden until the pane is hovered. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+*:hover {
+  scrollbar-color: rgba(120, 113, 108, 0.45) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 9999px;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+  background: rgba(120, 113, 108, 0.45);
+}
+
+*:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 113, 108, 0.7);
+}
+
+/* Dark theme surface overrides. The app uses fixed Tailwind utility tokens,
+   so we remap the handful of surfaces at the token level. */
+.dark .bg-\[\#FAF8F5\] { background-color: var(--page); }
+.dark .bg-white { background-color: var(--card); }
+.dark .bg-stone-50 { background-color: var(--card-2); }
+.dark .bg-stone-100 { background-color: var(--card-2); }
+.dark .bg-stone-200 { background-color: var(--line-2); }
+.dark .bg-stone-300 { background-color: var(--line-2); }
+.dark .bg-stone-50\/50 { background-color: color-mix(in srgb, var(--card-2) 50%, transparent); }
+.dark .bg-stone-100\/70 { background-color: color-mix(in srgb, var(--card-2) 70%, transparent); }
+.dark .bg-stone-900 { background-color: #0d0c0b; }
+.dark .bg-stone-950 { background-color: #0a0908; }
+.dark .bg-stone-950\/60 { background-color: color-mix(in srgb, #0a0908 60%, transparent); }
+
+.dark .text-stone-950 { color: #f5f2ee; }
+.dark .text-stone-900 { color: var(--ink); }
+.dark .text-stone-800 { color: #d6d2cd; }
+.dark .text-stone-700 { color: #bfbab4; }
+.dark .text-stone-600 { color: var(--muted); }
+.dark .text-stone-500 { color: #857f78; }
+.dark .text-stone-400 { color: #6b655f; }
+.dark .text-stone-300 { color: #57524d; }
+.dark .text-stone-100 { color: #e2deda; }
+.dark .text-stone-50 { color: #f0ece8; }
+.dark .placeholder-stone-400::placeholder { color: #6b655f; }
+
+.dark .border-stone-100 { border-color: var(--line); }
+.dark .border-stone-200 { border-color: var(--line); }
+.dark .border-stone-300 { border-color: var(--line-2); }
+.dark .border-stone-200\/60 { border-color: color-mix(in srgb, var(--line) 60%, transparent); }
+.dark .border-stone-200\/80 { border-color: color-mix(in srgb, var(--line) 80%, transparent); }
+.dark .border-stone-200\/90 { border-color: color-mix(in srgb, var(--line) 90%, transparent); }
+.dark .border-stone-200\/50 { border-color: color-mix(in srgb, var(--line) 50%, transparent); }
+.dark .border-stone-800 { border-color: #33302e; }
+
+.dark .bg-red-50 { background-color: #2a1613; }
+.dark .text-red-800 { color: #f1a9a0; }
+.dark .text-red-700 { color: #f0a197; }
+.dark .text-red-600 { color: #ee8f83; }
+.dark .border-red-200 { border-color: #54312a; }
+.dark .border-red-300 { border-color: #6b3b32; }
+.dark .bg-red-700 { background-color: #a33327; }
+.dark .bg-red-600 { background-color: #b34033; }
+.dark .text-red-950 { color: #fbc9c1; }
+
+.dark .hover\:bg-stone-100:hover { background-color: var(--card-2); }
+.dark .hover\:bg-stone-200:hover { background-color: var(--line-2); }
+.dark .hover\:bg-stone-50\/70:hover { background-color: color-mix(in srgb, var(--card-2) 70%, transparent); }
+.dark .hover\:border-stone-300:hover { border-color: var(--line-2); }
+.dark .hover\:border-stone-400:hover { border-color: #57524d; }
+.dark .focus\:bg-white:focus { background-color: var(--card); }
+.dark .focus\:border-stone-500:focus { border-color: #6b655f; }
+.dark .focus\:border-stone-900:focus { border-color: #eae6e2; }
+.dark .focus\:ring-stone-900:focus { --tw-ring-color: #eae6e2; }
+.dark .focus\:ring-red-500:focus { --tw-ring-color: #ee8f83; }
+.dark .hover\:text-stone-900:hover { color: var(--ink); }
+.dark .hover\:text-stone-950:hover { color: #f5f2ee; }
+.dark .hover\:text-stone-800:hover { color: #d6d2cd; }
+.dark .hover\:text-red-700:hover { color: #f0a197; }
+
+.dark .bg-\[\#FAF8F5\]\/95 { background-color: color-mix(in srgb, var(--page) 95%, transparent); }
